@@ -1,5 +1,8 @@
 import angular from 'angular'
 angular.module('employers', [])
-  .controller('EmployerController', function(){
-    this.placesToWork = ['Hardees', 'Walmart'];
+  .controller('EmployerController', function($http){
+
+    $http.get('/employers').then((response) => {
+      this.placesToWork = response;
+    })
   })
