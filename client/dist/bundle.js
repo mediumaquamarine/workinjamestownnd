@@ -7,8 +7,12 @@ var _angular2 = _interopRequireDefault(_angular);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_angular2.default.module('employers', []).controller('EmployerController', function () {
-  this.placesToWork = ['Hardees', 'Walmart'];
+_angular2.default.module('employers', []).controller('EmployerController', function ($http) {
+  var _this = this;
+
+  $http.get('/employers').then(function (response) {
+    _this.placesToWork = response.data;
+  });
 });
 
 },{"angular":3}],2:[function(require,module,exports){
