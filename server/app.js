@@ -15,6 +15,7 @@ app.get('/employers', function(request, response){
       response.sendStatus(400);
     }
     let employmentNames = docs.map((item) => item.name);
+    console.log(JSON.stringify(employmentNames));
     response.json(employmentNames);
   });
 });

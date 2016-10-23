@@ -3,6 +3,6 @@ angular.module('employers', [])
   .controller('EmployerController', function($http){
 
     $http.get('/employers').then((response) => {
-      this.placesToWork = response;
+      this.placesToWork = response.data;
     })
   })
