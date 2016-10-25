@@ -20,4 +20,4 @@ app.get('/employers', function(request, response){
   });
 });
 
-app.listen(process.env.port || 8181);
+app.listen(process.env.PORT || 8181);
